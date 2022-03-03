@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightskyblue;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-25deg) skew(25deg);
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    margin: 30px;
+    position: relative;
+    /* color: #fff; */
+}
+
+.button::before {
+    content: '';
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transform: skewX(-45deg);
+    transform-origin: top;
+}
+
+.button::after {
+    content: '';
+    width: 10px;
+    height: 100%;
+    background-color: grey;
+    position: absolute;
+    transform: skewY(-45deg);
+    top: 0;
+    left: -10px;
+    transform-origin: right;
+}
+
+span {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    transition: all 1s ease-out;
+}
+
+.button:hover span:nth-child(5) {
+    transform: translate(40px, -40px);
+}
+
+.button:hover span:nth-child(4) {
+    transform: translate(30px, -30px);
+    opacity: .8;
+}
+
+.button:hover span:nth-child(3) {
+    transform: translate(20px, -20px);
+    opacity: .6;
+}
+
+.button:hover span:nth-child(2) {
+    transform: translate(10px, -10px);
+    opacity: .4;
+}
+
+.button:hover span:nth-child(1) {
+    transform: translate(0px, -0px);
+    opacity: .2;
+}
+
+.button:nth-child(1):hover span {
+    background-color: royalblue;
+}
+
+.button:nth-child(2):hover span {
+    background-color: tomato;
+}
+
+.button:nth-child(3):hover span {
+    background-color: dodgerblue;
+}
+
+.button:nth-child(4):hover span {
+    background-color: red;
+}
