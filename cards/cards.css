@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.card {
+    width: 20%;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px #555;
+    transform: rotateX(60deg) scale(.7);
+    /* transition: all 5s ease; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    transition: all .5s ease;
+}
+
+.card:active {
+    transform: rotateX(0deg) scale(1) translateY(10px);
+}
