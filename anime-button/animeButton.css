@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightskyblue;
+    height: 50vh;
+}
+.container {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    overflow: hidden;
+}
+.interactive-container {
+    width: 150px;
+    height: 100%;
+    background-color: lightcoral;
+    position: relative;
+}
+.person {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(247, 234, 62);
+    position: relative;
+    transition: all 1s ease;
+}
+.smiling-person {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+}
+.surprised-person {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    transition: all 1.5s ease;
+}
+.eyes {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 10px;
+    left: 25%;
+    transition: all .5s ease;
+}
+.eye {
+    width: 6px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.mouth {
+    width: 35px;
+    height: 20px;
+    background-color: #000;
+    position: absolute;
+    border-radius: 0 0 60px 60px;
+    top: 25px;
+    left: 7.5px;
+    transition: all .5s ease;
+}
+.text-container {
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text {
+    font-size: 20px;
+    font-weight: 500;
+}
+.box {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    position: relative;
+    top: 20px;
+    left: 52px;
+    transform: rotate(180deg);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.dots {
+    position: absolute;
+    top: 6px;
+    left: 15px;
+}
+.surprised-mouth {
+    width: 10px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+}
+.container:hover .smiling-person {
+    transform: translate(-50px, -25px);
+}
+.container:hover .surprised-person {
+    transform: translate(-50px, -50px);
+}
+.container:hover .box {
+    opacity: 1;
+}
+.container:hover .smiling-person .eyes,
+.container:hover .smiling-person .mouth {
+    transform: translateX(3px);
+}
+.container:hover .surprised-person .eyes,
+.container:hover .surprised-person .mouth {
+    transform: translateX(-3px);
+}
