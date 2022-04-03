@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(94, 23, 98, 1) 73%,
+        rgba(138, 82, 141, 1) 100%
+    );
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
+    perspective: 100px;
+    overflow: hidden;
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    background: rgb(246, 255, 0);
+    background: linear-gradient(
+        180deg,
+        rgba(246, 255, 0, 1) 0%,
+        rgba(169, 0, 46, 1) 73%,
+        rgba(99, 0, 16, 1) 100%
+    );
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    animation: sun 5s alternate infinite;
+}
+@keyframes sun {
+    from {
+        box-shadow: 0 0 50px tomato;
+    }
+    to {
+        box-shadow: 0 0 50px gold;
+    }
+}
+
+.road {
+    width: 550%;
+    height: 50%;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    transform: rotateX(90deg);
+    background-image: url('grid.png');
+    transform-origin: bottom;
+    animation: road 1s linear infinite;
+}
+@keyframes road {
+    to {
+        transform: rotateX(90deg) translateX(-240px);
+    }
+}
+.mountain {
+    width: 300px;
+    height: 300px;
+    background-color: #000;
+    position: absolute;
+    bottom: 33vh;
+    right: -300px;
+    animation: mountain 5s linear infinite;
+    clip-path: polygon(32% 27%, 50% 1%, 67% 25%, 69% 59%, 89% 100%, 20% 100%, 0 100%, 9% 65%);
+}
+@keyframes mountain {
+    to {
+        transform: translateX(-2000px);
+    }
+}
+img {
+    width: 300px;
+    position: absolute;
+    left: 200px;
+    bottom: 100px;
+    animation: car .2s alternate infinite;
+}
+@keyframes car {
+    to {
+        transform: translateY(1px);
+    }
+}
