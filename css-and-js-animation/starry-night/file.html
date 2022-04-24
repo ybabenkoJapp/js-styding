@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Starry night</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scene">
+    <div class="moon" onclick="toggleScene()"></div>
+    <img src="forest.png" alt="forest" class="forest">
+    <img src="bg.png" alt="bg" class="bg">
+    <img src="cloud1.png" alt="cloud" class="cloud1">
+    <img src="cloud2.png" alt="cloud" class="cloud2">
+    <img src="cloud3.png" alt="cloud" class="cloud3">
+    <img src="cloud1.png" alt="cloud" class="cloud4">
+    <img src="cloud2.png" alt="cloud" class="cloud5">
+    <img src="cloud3.png" alt="cloud" class="cloud6">
+</div>
+<script>
+    const starsInTheSky = 1000;
+    const theSky = document.querySelector('.scene');
+    for (let i = 0; i < starsInTheSky; i++) {
+        const theStar = document.createElement('i');
+        const x = Math.floor(Math.random() * window.innerWidth);
+        const  y = Math.floor(Math.random() * window.innerHeight);
+        const size = Math.random() * 2;
+        const duration = Math.random() * 10;
+        theStar.style.top = y + 'px';
+        theStar.style.left = x + 'px';
+        theStar.style.width = size + 'px';
+        theStar.style.height = size + 'px';
+        theStar.style.animationDuration = 5 + duration + 's';
+        theStar.style.animationDelay = duration + 's';
+        theSky.appendChild(theStar);
+    }
+    function toggleScene() {
+        let change = document.querySelector('.scene');
+        change.classList.toggle('active');
+    }
+</script>
+</body>
+</html>
